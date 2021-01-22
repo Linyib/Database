@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS EpidemicData;#创建一个数据库
+USE EpidemicData;#使用数据库
+CREATE TABLE LocalData(
+NAME VARCHAR(40),
+confirmed INT(9),
+recovered INT(9),
+deaths INT(9),
+updated DATETIME
+);#建立一个表，存各个地区的数据
+DESC localData;#查看表结构
+DROP TABLE LocalData;#删除表
+SELECT * FROM localdata;#查看表的所有数据
+ALTER TABLE localdata ADD UNIQUE(NAME);#给localdata表添加一个唯一索引（name),方便更新数据
+CREATE TABLE country(
+NAME VARCHAR(40),
+confirmed INT(9),
+recovered INT(9),
+deaths INT(9)
+);#建立一个表，存各个国家总数据
+DESC country;#查看表结构
+ALTER TABLE country ADD UNIQUE(NAME);#给country表添加一个唯一索引（name),方便更新数据
+SELECT * FROM country;#查看表的所有数据
+DROP TABLE country;#删除表
